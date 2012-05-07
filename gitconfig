@@ -1,0 +1,21 @@
+[user]
+	name = Yiying Li
+	email = yyli@umich.edu
+
+[core]
+	editor = vim
+
+[color]
+    ui = auto
+
+[alias]
+	d = difftool
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+[log]
+	decorate = full
