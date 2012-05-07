@@ -59,4 +59,5 @@ fi
 install_zsh
 
 # symlink the custom theme into the theme folder
-ln -s $dir/gallios_custom.zsh-theme $dir/oh-my-zsh/gallios_custom.zsh-theme
+echo "Linking themes."
+ln -s $dir/gallois_custom.zsh-theme $dir/oh-my-zsh/themes/gallois_custom.zsh-theme
