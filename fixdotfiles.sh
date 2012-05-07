@@ -61,3 +61,7 @@ install_zsh
 # symlink the custom theme into the theme folder
 echo "Linking themes."
 ln -s $dir/gallois_custom.zsh-theme $dir/oh-my-zsh/themes/gallois_custom.zsh-theme
+
+# make vim undo folder
+echo "making vim undo folder"
+mkdir -p ~/.vim/undo
