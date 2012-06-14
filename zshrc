@@ -42,9 +42,16 @@ source $ZSH/oh-my-zsh.sh
 source ~/.git-completion.sh
 REPORTTIME=8
 
+## history-substring-search configuration ##
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=cyan,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
+
 ##### Aliases #####
+# Fix bad corrections when using sudo
+alias sudo='nocorrect sudo'
+
 # List direcory contents
-alias ls='LC_COLLATE=C ls --color=auto'
+alias ls='LC_COLLATE=C ls --color=auto --group-directories-first'
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
