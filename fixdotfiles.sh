@@ -7,7 +7,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="git-completion.sh gitconfig vimrc zshrc oh-my-zsh ssh/config"    # list of files/folders to symlink in homedir
 
 ##########
@@ -57,13 +57,19 @@ for file in $files; do
         
     fi
     echo "Creating symlink to $file"
-    ln -s $dir/$file ~/.$file
+	if [ ! -f ~/.$file ]; then
+		ln -s $dir/$file ~/.$file
+	else
+		echo "Warning: already symlinked"
+	fi
 
     echo ""
 done
 
 # run install_zsh
+echo "Installing and setting up zsh"
 install_zsh
+echo ""
 
 # symlink the custom theme into the theme folder
 echo "Linking theme"
@@ -75,5 +81,5 @@ fi
 echo ""
 
 # make vim undo folder
-echo "Laking vim undo folder"
+echo "Making vim undo folder"
 mkdir -p ~/.vim/undo

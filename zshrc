@@ -1,4 +1,8 @@
-source ~/.zprofile
+# source zprofile 
+if [ -f ~/.zprofile ]; then
+	source ~/.zprofile
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
