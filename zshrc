@@ -1,3 +1,4 @@
+source ~/.zprofile
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 

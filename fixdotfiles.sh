@@ -8,28 +8,11 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="git-completion.sh gitconfig vimrc zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="git-completion.sh gitconfig vimrc zshrc oh-my-zsh ssh/config"    # list of files/folders to symlink in homedir
 
 ##########
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
-done
-
+# install zsh function
 function install_zsh {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -56,12 +39,41 @@ else
 fi
 }
 
+# create dotfiles_old in homedir
+echo "Creating $olddir for backup"
+mkdir -p $olddir
+echo ""
+
+# change to the dotfiles directory
+echo "Changing to the $dir directory"
+cd $dir
+echo ""
+
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
+for file in $files; do
+    if [ -f ~/Downloads ] || [ -d ~/Downloads ]; then
+        echo "Moving .$file to $olddir/.$file"
+        mv ~/.$file ~/dotfiles_old/
+        
+    fi
+    echo "Creating symlink to $file"
+    ln -s $dir/$file ~/.$file
+
+    echo ""
+done
+
+# run install_zsh
 install_zsh
 
 # symlink the custom theme into the theme folder
-echo "Linking themes."
-ln -s $dir/gallois_custom.zsh-theme $dir/oh-my-zsh/themes/gallois_custom.zsh-theme
+echo "Linking theme"
+if [ ! -f $dir/oh-my-zsh/themes/gallois_custom.zsh-theme ]; then
+    ln -s $dir/gallois_custom.zsh-theme $dir/oh-my-zsh/themes/gallois_custom.zsh-theme
+else
+    echo "Warning: theme already linked"
+fi
+echo ""
 
 # make vim undo folder
-echo "making vim undo folder"
+echo "Laking vim undo folder"
 mkdir -p ~/.vim/undo

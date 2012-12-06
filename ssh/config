@@ -1,0 +1,50 @@
+Host caen
+	Hostname login.engin.umich.edu
+	User yyli
+
+Host aerocad
+	Hostname aerocad1.engin.umich.edu
+	User yyli
+
+# Serenity Camera Computers
+
+Host serenity
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5141
+
+Host zoe
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5142
+
+Host kaylee
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5143
+
+Host river
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5144
+
+Host simon
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5145
+
+Host inara
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5146
+
+Host jayne
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5147
+
+Host mal
+	Hostname serenity1.engin.umich.edu
+	User yyli
+	Port 5148
+
