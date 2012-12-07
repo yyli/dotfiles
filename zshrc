@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search)
+plugins=(git history-substring-search ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,11 +74,3 @@ alias vimtexs='vimtex -S Session.vim'
 alias glg="git log --graph --decorate --pretty=format:'%C(bold blue)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=local"
 alias glgg='git log --decorate --graph'
 alias glgv='git log --decorate --stat -M'
-
-# start ssh-agent
-SSHAGENT=/usr/bin/ssh-agent
-SSHAGENTARGS="-s"
-if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-  eval `$SSHAGENT $SSHAGENTARGS > /dev/null 2>&1`
-  trap "kill $SSH_AGENT_PID" 0
-fi
