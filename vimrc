@@ -40,8 +40,6 @@ colorscheme elflord
 set number
 set ruler
 
-set mouse=a
-
 "highlight OverLength ctermbg=DarkRed ctermfg=white guibg=#592929
 "match Error /\%81v.\+/
 
