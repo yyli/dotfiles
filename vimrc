@@ -45,13 +45,6 @@ set mouse=a
 "highlight OverLength ctermbg=DarkRed ctermfg=white guibg=#592929
 "match Error /\%81v.\+/
 
-
-" Persistent undo (requires Vim >= 7.3)
-set undofile
-set undodir=~/.vim/undo
-set undolevels=1000  "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer reload
-
 set wildmenu
 
 set showcmd
@@ -68,6 +61,7 @@ set tabstop=4
 set noet sts=0 sw=4 ts=4
 set cindent
 set cinoptions=(0,u0,U0
+set expandtab
 
 set ssop-=options
 

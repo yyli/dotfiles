@@ -74,3 +74,5 @@ alias vimtexs='vimtex -S Session.vim'
 alias glg="git log --graph --decorate --pretty=format:'%C(bold blue)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=local"
 alias glgg='git log --decorate --graph'
 alias glgv='git log --decorate --stat -M'
+
+export EDITOR=/usr/bin/vim
