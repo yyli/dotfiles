@@ -1,7 +1,0 @@
-Host caen
-	Hostname login.engin.umich.edu
-	User yyli
-
-Host aerocad
-	Hostname aerocad1.engin.umich.edu
-	User yyli
