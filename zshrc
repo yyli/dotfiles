@@ -50,6 +50,8 @@ REPORTTIME=8
 ## history-substring-search configuration ##
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=cyan,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=red,bold'
+HISTORY_SUBSTRING_SEARCH_FUZZY=fuzzy
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=unique
 
 ##### Aliases #####
 # Fix bad corrections when using sudo
